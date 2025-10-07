@@ -1,5 +1,5 @@
 /**
- * Basic, strongly-typed server core for MiniServerJS.
+ * Basic server core for MiniServerJS.
  * - Supports plugin registration via `use()`
  * - Supports typed `get`/`set` on a shared context
  * - Supports lifecycle hooks (before/after initialization)
@@ -16,7 +16,6 @@ export interface Plugin<C extends Record<string, any> = Record<string, any>> {
   setup: PluginSetup<C>;
 }
 
-// Hooks callbacks
 type Hook = () => MaybePromise<void>;
 
 export class Server<C extends Record<string, any> = Record<string, any>> {
@@ -103,8 +102,8 @@ export class Server<C extends Record<string, any> = Record<string, any>> {
         await plugin.setup(this);
         console.log(`✅ Plugin ${plugin.name} setup complete`);
       } catch (err) {
-        // In a real system, you'd gather diagnostics or fail fast depending on strategy.
-        // For the learning project we'll just rethrow to make errors visible in tests.
+        // In a real world, you'd gather diagnostics or fail fast depending on strategy.
+        // For this learning project we'll just rethrow to make errors visible in tests.
         throw new Error(`Plugin "${plugin.name}" failed during setup: ${(err as Error).message}`);
       }
     }

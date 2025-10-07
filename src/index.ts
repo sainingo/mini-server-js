@@ -11,7 +11,7 @@ import { diagnosticsPlugin } from './plugins/diagnostics.js';
 // Create server instance
 const server = new Server();
 
-// Register plugins in order - dependencies first!
+// Register plugins
 server
   .use(loggerPlugin)
   .use(greeterPlugin)
@@ -31,7 +31,7 @@ server
     const diagnostics = server.get('diagnostics');
     
     if (greet && logger) {
-      greet('MiniServer User');
+      greet('MiniServer User.......');
     }
     
     if (diagnostics) {
