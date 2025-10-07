@@ -9,7 +9,7 @@
     "dev": "node --loader ts-node/esm src/index.ts",
     "test": "vitest",
     "test:run": "vitest run",
-    "example": "ts-node-esm src/examples/basic-usage.ts"
+    "example": "node --loader ts-node/esm src/examples/basic-usage.ts"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
