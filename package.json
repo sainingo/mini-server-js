@@ -1,0 +1,20 @@
+{
+  "name": "mini-server-js",
+  "version": "1.0.0",
+  "description": "A mini plugin-based server for learning advanced TypeScript concepts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-esm src/index.ts",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "example": "ts-node-esm src/examples/basic-usage.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2",
+    "ts-node": "^10.9.1",
+    "@types/node": "^20.10.5"
+  }
+}
